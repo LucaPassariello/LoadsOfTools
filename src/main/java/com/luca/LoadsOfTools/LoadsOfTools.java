@@ -5,13 +5,14 @@ import com.luca.LoadsOfTools.Proxy.IProxy;
 import com.luca.LoadsOfTools.Reference.Reference;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 public class LoadsOfTools
 {
-    @SidedProxy(clientSide = "com.luca.LoadsOFTools.Proxy.ClientProxy", serverSide = "com.luca.LoadsOfTools.Proxy.ServerProxy", modId = Reference.MOD_ID)
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static IProxy proxy;
 
     @Mod.EventHandler
@@ -21,7 +22,7 @@ public class LoadsOfTools
     }
 
     @Mod.EventHandler
-    public void init(FMLPreInitializationEvent event)
+    public void init(FMLInitializationEvent event)
     {
 
     }
